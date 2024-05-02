@@ -1,12 +1,12 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 
-
 # TODO Deixar texto mais clean Deixar código mais clean, criando variaveis para as partes e depois só chamando Tentar
 class PecasComputador:
     def __init__(self, root):
         self.root = root
         self.root.title("Conhecendo mais sobre os computadores...")
+        self.root.resizable(False, False)
 
         self.label_titulo = tk.Label(root, text="Aprenda mais sobre Hardware", font=("Helvetica", 18, "bold"), pady=10)
         self.label_titulo.pack(pady=5)
@@ -15,6 +15,7 @@ class PecasComputador:
         self.label_informacao.pack(pady=5)
 
         self.parts = {
+
             "PLACA MÃE": {
                 "Informação": "É a unidade central de um sistema de computador, conectando todos os componentes de  "
                               "hardware e permitindo que eles se comuniquem entre si.",
@@ -48,6 +49,7 @@ class PecasComputador:
 
         }
 
+
         self.parte_selecionada = tk.StringVar()
         self.parte_selecionada.set("Selecione uma peça")
 
@@ -55,7 +57,7 @@ class PecasComputador:
         self.opcoes.config(font=("Helvetica", 12, "bold"), pady=10)
         self.opcoes.pack(pady=5)
 
-        self.parte_informacao = tk.Label(root, text="", font=("Helvetica", 10, "bold"))
+        self.parte_informacao = tk.Label(root, text="", font=("Helvetica", 10, "bold"), wraplength=550)
         self.parte_informacao.pack(pady=5, padx=20)
 
         self.parte_imagem = tk.Label(root, text="")
